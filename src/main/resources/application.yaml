@@ -1,3 +1,13 @@
 spring:
   application:
     name: life-os
+  datasource:
+    url: jdbc:postgresql://localhost:5432/lifeos
+    username: lifeos_user
+    password: lifeos_password
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true

@@ -11,10 +11,11 @@ class DataLoaderConfig(private val habitRepository: HabitRepository) {
 
     @Bean
     fun dataLoaderRunner() = ApplicationRunner {
-        val habits = mutableListOf(
-            Habit(name = "Løping", description = "30 minutes", streakDays = 5),
-            Habit(name = "Lesing", description = "20 minutes", streakDays = 3),
-        )
-        habitRepository.saveAll(habits)
+        if (habitRepository.count() == 0L) {
+            habitRepository.saveAll(listOf(
+                Habit(name = "Løping", description = "30 minutes", streakDays = 5),
+                Habit(name = "Lesing", description = "20 minutes", streakDays = 3)
+            ))
+        }
     }
 }
