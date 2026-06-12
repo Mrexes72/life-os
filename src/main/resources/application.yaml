@@ -2,9 +2,9 @@ spring:
   application:
     name: life-os
   datasource:
-    url: jdbc:postgresql://localhost:5432/lifeos
-    username: lifeos_user
-    password: lifeos_password
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
   jpa:
