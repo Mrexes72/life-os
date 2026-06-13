@@ -1,0 +1,6 @@
+CREATE TABLE habit(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name   VARCHAR(50) NOT NULL,
+    description VARCHAR(100),
+    streak_days INT     NOT NULL DEFAULT 0
+)
